@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:unicare/screens/Student/Auth/signUp.dart';
 import 'package:unicare/utils/colors.dart';
 
 class TherapistSignIn extends StatelessWidget {
@@ -43,6 +42,7 @@ class TherapistSignIn extends StatelessWidget {
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                // ignore: duplicate_ignore
                 children: <Widget>[
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,12 +61,10 @@ class TherapistSignIn extends StatelessWidget {
                       const SizedBox(
                         height: 5,
                       ),
-                      // ignore: prefer_const_constructors
                       Align(
                         alignment: const Alignment(-0.7, 0),
                         child: const Text(
                           "Let's get you signed in.",
-                          // ignore: prefer_const_constructors
                           style: TextStyle(
                             fontSize: 16,
                             color: AppColors.subTextColor,
@@ -75,9 +73,18 @@ class TherapistSignIn extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // ignore: prefer_const_constructors
                   SizedBox(
                     height: 5,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(top: 5),
+                    height: 200,
+                    decoration: const BoxDecoration(
+                      // ignore: unnecessary_const
+                      image: const DecorationImage(
+                          image: AssetImage("assets/images/doc.png"),
+                          fit: BoxFit.fitHeight),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -176,16 +183,6 @@ class TherapistSignIn extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.only(top: 5),
-                    height: 200,
-                    decoration: const BoxDecoration(
-                      // ignore: unnecessary_const
-                      image: const DecorationImage(
-                          image: AssetImage("assets/images/doc.png"),
-                          fit: BoxFit.fitHeight),
-                    ),
-                  ),
                 ],
               ),
             )
@@ -214,7 +211,6 @@ Widget inputFile({label, obscureText = false, hintText}) {
         decoration: InputDecoration(
             hintText: hintText2,
             contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            // ignore: prefer_const_constructors
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Color(0xFFBDBDBD)),
             ),
