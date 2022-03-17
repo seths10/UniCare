@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unicare/utils/colors.dart';
 
 class StudentHome extends StatefulWidget {
-  const StudentHome({Key? key}) : super(key: key);
+  StudentHome({Key? key}) : super(key: key);
 
   @override
   State<StudentHome> createState() => _StudentHomeState();
@@ -21,40 +21,48 @@ class _StudentHomeState extends State<StudentHome> {
           physics: const ClampingScrollPhysics(),
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 16, right: 16, top: 16),
+              margin: const EdgeInsets.only(left: 16, right: 16, top: 29),
+              // color: Colors.blue[600],
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16, bottom: 16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Hello, Seth!",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.textColor),
-                          ),
-                          const Text(
-                            'How are you feeling today?',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.textColor),
-                          )
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 59,
-                      width: 59,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/avatar.png'))),
-                    )
-                  ]),
-            )
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 59,
+                    width: 59,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/avatar.png'))),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, bottom: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Hello, Seth!",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.textColor),
+                  ),
+                  const Text(
+                    'How are you feeling today?',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textColor),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(),
           ],
         ),
       ),
