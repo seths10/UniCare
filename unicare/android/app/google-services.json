@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "603017674339",
+    "firebase_url": "https://ucare-a68cc-default-rtdb.firebaseio.com",
+    "project_id": "ucare-a68cc",
+    "storage_bucket": "ucare-a68cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603017674339:android:2737e9cdc64ce618d44256",
+        "android_client_info": {
+          "package_name": "com.example.unicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603017674339-0p4k3pkgg3fbjgebqfkkhgh8126ade24.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unicare",
+            "certificate_hash": "40929fc4fc208104512dd3dea73aae950a777e64"
+          }
+        },
+        {
+          "client_id": "603017674339-rnmh4nk2h65hg67mq794hh5p95kt7a7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCStTaLEUd8cYoyPtTiM3gbNQME5KACZkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603017674339-rnmh4nk2h65hg67mq794hh5p95kt7a7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -80,6 +80,16 @@ class StudentSignIn extends StatelessWidget {
                 SizedBox(
                   height: 5,
                 ),
+                Container(
+                  padding: const EdgeInsets.only(top: 5),
+                  height: 200,
+                  decoration: const BoxDecoration(
+                    // ignore: unnecessary_const
+                    image: const DecorationImage(
+                        image: AssetImage("assets/images/student.png"),
+                        fit: BoxFit.fitHeight),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: Column(
@@ -182,16 +192,7 @@ class StudentSignIn extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.only(top: 5),
-                  height: 200,
-                  decoration: const BoxDecoration(
-                    // ignore: unnecessary_const
-                    image: const DecorationImage(
-                        image: AssetImage("assets/images/student.png"),
-                        fit: BoxFit.fitHeight),
-                  ),
-                ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   // ignore: prefer_const_literals_to_create_immutables
