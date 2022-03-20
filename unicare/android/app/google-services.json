@@ -8,14 +8,14 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:603017674339:android:2737e9cdc64ce618d44256",
+        "mobilesdk_app_id": "1:603017674339:android:63523c98b4c47ad7d44256",
         "android_client_info": {
           "package_name": "com.unicare.android"
         }
       },
       "oauth_client": [
         {
-          "client_id": "603017674339-0p4k3pkgg3fbjgebqfkkhgh8126ade24.apps.googleusercontent.com",
+          "client_id": "603017674339-5lj3l4138m6ep22vud9f6toro9jug5ht.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.unicare.android",
@@ -38,6 +38,13 @@
             {
               "client_id": "603017674339-rnmh4nk2h65hg67mq794hh5p95kt7a7s.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "603017674339-jg2oiprbt6dso5g6pfunm6qf9ukqf61e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unicare.ios"
+              }
             }
           ]
         }

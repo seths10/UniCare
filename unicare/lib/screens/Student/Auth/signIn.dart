@@ -15,6 +15,8 @@ class StudentSignIn extends StatefulWidget {
 
 class _StudentSignInState extends State<StudentSignIn> {
   final firebaseAuth = FbAuth();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,191 +44,183 @@ class _StudentSignInState extends State<StudentSignIn> {
           ),
         ),
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: double.infinity,
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Expanded(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: <Widget>[
-                    const Align(
-                      alignment: Alignment(-0.6, 0),
-                      child: Text(
-                        "Welcome Back,\nyou have been missed",
-                        style: TextStyle(
-                            height: 1.2,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    // ignore: prefer_const_constructors
-                    Align(
-                      alignment: const Alignment(-0.7, 0),
-                      child: const Text(
-                        "Let's get you signed in.",
-                        // ignore: prefer_const_constructors
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: AppColors.subTextColor,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+            const Align(
+              alignment: Alignment(-0.6, 0),
+              child: Text(
+                "Welcome Back,\nyou have been missed",
+                style: TextStyle(
+                    height: 1.2, fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            // ignore: prefer_const_constructors
+            Align(
+              alignment: const Alignment(-0.7, 0),
+              child: const Text(
+                "Let's get you signed in.",
                 // ignore: prefer_const_constructors
-                SizedBox(
-                  height: 5,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppColors.subTextColor,
                 ),
-                Container(
-                  padding: const EdgeInsets.only(top: 5),
-                  height: 200,
-                  decoration: const BoxDecoration(
-                    // ignore: unnecessary_const
-                    image: const DecorationImage(
-                        image: AssetImage("assets/images/student.png"),
-                        fit: BoxFit.fitHeight),
+              ),
+            ),
+            // ignore: prefer_const_constructors
+            SizedBox(
+              height: 5,
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 5),
+              height: 200,
+              decoration: const BoxDecoration(
+                // ignore: unnecessary_const
+                image: const DecorationImage(
+                    image: AssetImage("assets/images/student.png"),
+                    fit: BoxFit.fitHeight),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                children: <Widget>[
+                  inputFile(
+                      label: "Username",
+                      hintText: 'Enter your username',
+                      controller: emailController),
+                  inputFile(
+                      label: "Password",
+                      obscureText: true,
+                      hintText: 'Enter your password',
+                      controller: passwordController),
+                  const Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        color: AppColors.primaryColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Container(
+                padding: const EdgeInsets.only(top: 3, left: 3),
+                child: MaterialButton(
+                  minWidth: double.infinity,
+                  height: 50,
+                  onPressed: () {
+                    firebaseAuth.signIn(
+                        emailController.text, passwordController.text);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StudentHome(),
+                      ),
+                    );
+                  },
+                  color: AppColors.primaryColor,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Text(
+                    "Sign in",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Column(
-                    children: <Widget>[
-                      inputFile(
-                          label: "Username", hintText: 'Enter your username'),
-                      inputFile(
-                          label: "Password",
-                          obscureText: true,
-                          hintText: 'Enter your password'),
-                      const Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          "Forgot Password?",
-                          style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                          ),
-                        ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35),
+              child: Container(
+                padding: const EdgeInsets.only(top: 1, left: 12),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: const Border(
+                      bottom: BorderSide(color: Colors.black),
+                      top: BorderSide(color: Colors.black),
+                      left: BorderSide(color: Colors.black),
+                      right: BorderSide(color: Colors.black),
+                    )),
+                child: MaterialButton(
+                  // minWidth: double.infinity,
+                  minWidth: double.infinity,
+                  height: 35,
+                  onPressed: () {
+                    firebaseAuth.signInWithGoogle();
+                  },
+                  color: Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      Image.asset(
+                        'assets/logos/google_logo.png',
+                        width: 70,
+                        height: 35,
                       ),
                       const SizedBox(
-                        height: 5,
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Container(
-                    padding: const EdgeInsets.only(top: 3, left: 3),
-                    child: MaterialButton(
-                      minWidth: double.infinity,
-                      height: 50,
-                      onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => StudentHome(),
-                        ),
+                        width: 10,
                       ),
-                      color: AppColors.primaryColor,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Text(
-                        "Sign in",
+                      const Text(
+                        "Continue with Google",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 35),
-                  child: Container(
-                    padding: const EdgeInsets.only(top: 1, left: 12),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: const Border(
-                          bottom: BorderSide(color: Colors.black),
-                          top: BorderSide(color: Colors.black),
-                          left: BorderSide(color: Colors.black),
-                          right: BorderSide(color: Colors.black),
-                        )),
-                    child: MaterialButton(
-                      // minWidth: double.infinity,
-                      minWidth: double.infinity,
-                      height: 35,
-                      onPressed: () {
-                        firebaseAuth.signIn();
-                      },
-                      color: Colors.white,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          Image.asset(
-                            'assets/logos/google_logo.png',
-                            width: 70,
-                            height: 35,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text(
-                            "Continue with Google",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+              ),
+            ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: <Widget>[
-                    const Text("Don't have an account?"),
-                    GestureDetector(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => StudentSignUp(),
-                        ),
-                      ),
-                      child: const Text(
-                        " create one",
-                        style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: <Widget>[
+                const Text("Don't have an account?"),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => StudentSignUp(),
+                    ),
+                  ),
+                  child: const Text(
+                    " create one",
+                    style: TextStyle(
+                      color: AppColors.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                    ),
+                  ),
+                )
               ],
-            ))
+            )
           ],
         ),
       ),
@@ -234,7 +228,7 @@ class _StudentSignInState extends State<StudentSignIn> {
   }
 }
 
-Widget inputFile({label, obscureText = false, hintText}) {
+Widget inputFile({label, obscureText = false, hintText, controller}) {
   var hintText2 = hintText;
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -249,6 +243,7 @@ Widget inputFile({label, obscureText = false, hintText}) {
       ),
       TextField(
         obscureText: obscureText,
+        controller: controller,
         decoration: InputDecoration(
             hintText: hintText2,
             contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
