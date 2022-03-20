@@ -42,12 +42,10 @@ class FbAuth {
     }
   }
 
-  signIn() async {
+  signIn(String email, String password) async {
     try {
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
-        email: "adddd@fcwec.ggg",
-        password: "y13523dc23d",
-      );
+          email: email, password: password);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
