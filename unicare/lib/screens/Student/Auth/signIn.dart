@@ -3,11 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:unicare/screens/Student/Auth/signUp.dart';
 import 'package:unicare/screens/Student/Home/home.dart';
+import 'package:unicare/services/firebase_auth.dart';
 import 'package:unicare/utils/colors.dart';
 
-class StudentSignIn extends StatelessWidget {
+class StudentSignIn extends StatefulWidget {
   const StudentSignIn({Key? key}) : super(key: key);
 
+  @override
+  State<StudentSignIn> createState() => _StudentSignInState();
+}
+
+class _StudentSignInState extends State<StudentSignIn> {
+  final firebaseAuth = FbAuth();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,7 +169,9 @@ class StudentSignIn extends StatelessWidget {
                       // minWidth: double.infinity,
                       minWidth: double.infinity,
                       height: 35,
-                      onPressed: () {},
+                      onPressed: () {
+                        firebaseAuth.signIn();
+                      },
                       color: Colors.white,
                       elevation: 0,
                       shape: RoundedRectangleBorder(
