@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:603017674339:android:2737e9cdc64ce618d44256",
         "android_client_info": {
-          "package_name": "com.example.unicare"
+          "package_name": "com.unicare.android"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "603017674339-0p4k3pkgg3fbjgebqfkkhgh8126ade24.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.unicare",
+            "package_name": "com.unicare.android",
             "certificate_hash": "40929fc4fc208104512dd3dea73aae950a777e64"
           }
         },
