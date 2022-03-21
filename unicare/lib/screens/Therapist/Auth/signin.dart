@@ -108,7 +108,7 @@ class TherapistSignIn extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          height: 5,
+                          height: 2,
                         )
                       ],
                     ),
@@ -140,7 +140,7 @@ class TherapistSignIn extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 35),
                     child: Container(
-                      padding: const EdgeInsets.only(top: 1, left: 12),
+                      padding: const EdgeInsets.only(top: 0, left: 12),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: const Border(
@@ -168,7 +168,7 @@ class TherapistSignIn extends StatelessWidget {
                               height: 35,
                             ),
                             const SizedBox(
-                              width: 10,
+                              width: 5,
                             ),
                             const Text(
                               "Continue with Google",
@@ -218,7 +218,7 @@ Widget inputFile({label, obscureText = false, hintText}) {
                 borderSide: BorderSide(color: Color(0xFFBDBDBD)))),
       ),
       const SizedBox(
-        height: 10,
+        height: 5,
       )
     ],
   );

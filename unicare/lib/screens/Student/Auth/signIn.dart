@@ -49,6 +49,9 @@ class _StudentSignInState extends State<StudentSignIn> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            SizedBox(
+              height: 40,
+            ),
             const Align(
               alignment: Alignment(-0.6, 0),
               child: Text(
@@ -149,6 +152,7 @@ class _StudentSignInState extends State<StudentSignIn> {
                 ),
               ),
             ),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Container(
@@ -197,7 +201,7 @@ class _StudentSignInState extends State<StudentSignIn> {
                 ),
               ),
             ),
-
+            SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
