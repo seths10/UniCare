@@ -6,6 +6,8 @@ import 'package:unicare/controllers/user_provider.dart';
 import 'package:unicare/models/user.dart';
 import 'package:unicare/screens/Student/Home/home.dart';
 import 'package:unicare/screens/Welcome/welcome.dart';
+import 'package:unicare/services/firebase_auth.dart';
+import 'package:unicare/utils/colors.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -42,14 +44,32 @@ class WaitingScreen extends StatefulWidget {
   const WaitingScreen({Key? key}) : super(key: key);
 
   @override
-  State<WaitingScreen> createState() => _WaitindScreenState();
+  State<WaitingScreen> createState() => _WaitingScreenState();
 }
 
-class _WaitindScreenState extends State<WaitingScreen> {
+class _WaitingScreenState extends State<WaitingScreen> {
+  final firebaseAuth = FbAuth();
+
+  @override
+  void initState() {
+    firebaseAuth.listen();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     User user = Provider.of<UserProvider>(context).user;
-
-    return user.id != "" ? const StudentHome() : const Welcome();
+    bool loading = Provider.of<UserProvider>(context).loading;
+    return user.token.isEmpty && loading
+        ? const Scaffold(
+            backgroundColor: Colors.white,
+            body: Center(
+              child: CircularProgressIndicator(
+                color: AppColors.primaryColor,
+              ),
+            ))
+        : user.token.isEmpty && !loading
+            ? const Welcome()
+            : const StudentHome();
   }
 }

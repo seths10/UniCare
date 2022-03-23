@@ -10,11 +10,15 @@ class UserProvider extends ChangeNotifier {
   factory UserProvider() => _instance;
 
   User user = User(email: "", id: "", name: "", token: "");
+  bool loading = true;
 
   void setUser(User user) {
     user = user;
-    print(user);
-    print(user.token);
+    notifyListeners();
+  }
+
+  void setLoading(bool value) {
+    loading = value;
     notifyListeners();
   }
 }
