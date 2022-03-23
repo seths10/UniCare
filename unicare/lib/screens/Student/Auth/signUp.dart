@@ -2,10 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:unicare/screens/Student/Auth/signIn.dart';
-import 'package:unicare/screens/Student/Auth/signUp.dart';
+import 'package:unicare/services/firebase_auth.dart';
 import 'package:unicare/utils/colors.dart';
-
-import '../../../services/firebase_auth.dart';
 
 class StudentSignUp extends StatelessWidget {
   StudentSignUp({Key? key}) : super(key: key);
@@ -133,7 +131,10 @@ class StudentSignUp extends StatelessWidget {
                   height: 50,
                   onPressed: () {
                     firebaseAuth.signUp(
-                        emailController.text, passwordController.text);
+                        emailController.text,
+                        passwordController.text,
+                        nameController.text,
+                        indexController.text);
                   },
                   color: AppColors.primaryColor,
                   elevation: 0,

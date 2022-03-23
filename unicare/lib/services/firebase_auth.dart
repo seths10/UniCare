@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:unicare/controllers/user_provider.dart';
+import 'package:unicare/models/user.dart' as UserModel;
 
 class FbAuth {
   FirebaseAuth auth = FirebaseAuth.instance;
+  final userProvider = UserProvider();
 
   listen() {
     auth.authStateChanges().listen((User? user) {
@@ -24,13 +27,22 @@ class FbAuth {
     });
   }
 
-  signUp(String email, String password) async {
+  signUp(String email, String password, String name, String indexNum) async {
     try {
       UserCredential userCredential = await auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      await userCredential.user?.updateDisplayName(name);
       await sendEmailVerification();
+      String? token = await auth.currentUser?.getIdToken();
+      userProvider.setUser(UserModel.User(
+          token: token ?? "",
+          id: userCredential.user?.uid ?? "",
+          name: name,
+          email: userCredential.user?.email ?? "",
+          image: userCredential.user?.photoURL ?? "",
+          indexNum: indexNum));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
@@ -46,6 +58,15 @@ class FbAuth {
     try {
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
           email: email, password: password);
+      String? token = await auth.currentUser?.getIdToken();
+      userProvider.setUser(UserModel.User(
+        token: token ?? "",
+        id: userCredential.user?.uid ?? "",
+        name: userCredential.user?.displayName ?? "",
+        email: userCredential.user?.email ?? "",
+        image: userCredential.user?.photoURL ?? "",
+        // indexNum: indexNum
+      ));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
