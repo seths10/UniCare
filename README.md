@@ -58,7 +58,10 @@ Our app primarily deals with the health sector. When it comes to saving a life, 
 ##### Made with ♥ by 
 
 <p align="left">
-<a href="https://github.com/seths10"><img width="128px" src="https://avatars1.githubusercontent.com/u/54989142?s=460&u=4b787a0f50c1236b915d4766aa1a40c1b1d9f313&v=4"></a><a href="https://github.com/bilyhack12"><img width="128px" src="https://avatars.githubusercontent.com/u/51001134?v=4"></a><a href="https://github.com/strange-philip"><img width="128px" src="https://avatars.githubusercontent.com/u/44980497?v=4"></a><a href="https://github.com/kennydop"><img width="128px" src="https://avatars.githubusercontent.com/kennydop"></a>
+<a href="https://github.com/seths10"><img width="128px" src="https://avatars1.githubusercontent.com/seths10"></a>
+<a href="https://github.com/bilyhack12"><img width="128px" src="https://avatars.githubusercontent.com/bilyhack12"></a>
+<a href="https://github.com/strange-philip"><img width="128px" src="https://avatars.githubusercontent.com/strange-philip">
+</a><a href="https://github.com/kennydop"><img width="128px" src="https://avatars.githubusercontent.com/kennydop"></a>
 </p>
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/seths10)
