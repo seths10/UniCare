@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:unicare/screens/Chat/chat.dart';
-import 'package:unicare/screens/Therapist/Home/home.dart';
 import 'package:unicare/screens/Welcome/welcome.dart';
 import 'firebase_options.dart';
 
@@ -26,7 +24,7 @@ class UniCare extends StatelessWidget {
       home: AnimatedSplashScreen(
         splash: 'assets/images/logo.png',
         duration: 700,
-        nextScreen: const TherapistHome(),
+        nextScreen: const Welcome(),
         splashIconSize: 130,
         splashTransition: SplashTransition.fadeTransition,
       ),

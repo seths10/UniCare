@@ -19,16 +19,15 @@ class Welcome extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Column(
-                children: <Widget>[
-                  const Text(
+                children: const <Widget>[
+                  Text(
                     "Welcome",
-                    // ignore: unnecessary_const
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
                         color: AppColors.textColor),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
                   Text(
