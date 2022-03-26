@@ -288,6 +288,7 @@ class _StudentHomeState extends State<StudentHome> {
                       GestureDetector(
                         onTap: () => {},
                         child: Container(
+                          margin: EdgeInsets.fromLTRB(5, 0, 25, 0),
                           width: 156,
                           height: 403,
                           child: Stack(
@@ -420,6 +421,7 @@ class _StudentHomeState extends State<StudentHome> {
                           ),
                         },
                         child: Container(
+                          margin: EdgeInsets.fromLTRB(0, 0, 15, 0),
                           width: 156,
                           height: 403,
                           child: Stack(
