@@ -45,7 +45,7 @@ git clone https://github.com/seths10/UniCare.git
 ```
   ##### Move to the desired folder
 ```bash
-cd \unicare
+cd unicare
 ```
 
   ##### To run the app, simply write
