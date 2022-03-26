@@ -1,4 +1,4 @@
-
+<img src="./designs/UniCare design.png" width="100%"/>
 <h1 align="center"> UniCare </h1>
 <p align="center">A <b>Solution Challenge</b> Submission</p>.
 
