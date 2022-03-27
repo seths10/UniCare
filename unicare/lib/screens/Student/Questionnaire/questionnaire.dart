@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unicare/screens/Student/Home/home.dart';
 import 'package:unicare/screens/Student/Questionnaire/answer.dart';
 import 'package:unicare/screens/Student/Questionnaire/questions.dart';
 import 'package:unicare/utils/colors.dart';
@@ -57,6 +58,18 @@ class _QuestionnaireState extends State<Questionnaire> {
   var _questionIndex = 0;
 
   void _answerQuestion() {
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+  }
+
+  void _previous() {
+    setState(() {
+      _questionIndex = _questionIndex - 1;
+    });
+  }
+
+  void _next() {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
@@ -189,7 +202,9 @@ class _QuestionnaireState extends State<Questionnaire> {
                             primary: Colors.white,
                             textStyle: const TextStyle(fontSize: 20),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _previous();
+                          },
                           child: const Text(
                             'Previous',
                           ),
@@ -204,7 +219,9 @@ class _QuestionnaireState extends State<Questionnaire> {
                             primary: Colors.white,
                             textStyle: const TextStyle(fontSize: 20),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _next();
+                          },
                           child: const Text(
                             'Next',
                           ),
@@ -215,8 +232,36 @@ class _QuestionnaireState extends State<Questionnaire> {
                 ],
               ),
             )
-          : const Center(
-              child: Text('Your answers has been submitted'),
+          : Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Your answers has been submitted'),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: AppColors.primaryColor,
+                        padding: const EdgeInsets.fromLTRB(25, 8, 25, 8),
+                        primary: Colors.white,
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => StudentHome(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        'Home',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
     );
   }

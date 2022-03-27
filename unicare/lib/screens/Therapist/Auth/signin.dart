@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:unicare/screens/Therapist/Home/home.dart';
 import 'package:unicare/utils/colors.dart';
 
 class TherapistSignIn extends StatelessWidget {
@@ -120,7 +121,14 @@ class TherapistSignIn extends StatelessWidget {
                       child: MaterialButton(
                         minWidth: double.infinity,
                         height: 50,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TherapistHome(),
+                            ),
+                          );
+                        },
                         color: AppColors.primaryColor,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
