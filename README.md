@@ -1,4 +1,4 @@
-
+<img src="./designs/UniCare design.png" width="100%" height="60%"/>
 <h1 align="center"> UniCare </h1>
 <p align="center">A <b>Solution Challenge</b> Submission</p>.
 
@@ -45,7 +45,7 @@ git clone https://github.com/seths10/UniCare.git
 ```
   ##### Move to the desired folder
 ```bash
-cd \unicare
+cd unicare
 ```
 
   ##### To run the app, simply write
