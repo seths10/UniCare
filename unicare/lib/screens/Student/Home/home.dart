@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:unicare/screens/Student/Questionnaire/questionnaire.dart';
 import 'package:unicare/screens/Student/Report/report.dart';
 import 'package:unicare/utils/colors.dart';
 
@@ -286,7 +287,14 @@ class _StudentHomeState extends State<StudentHome> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       GestureDetector(
-                        onTap: () => {},
+                        onTap: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Questionnaire(),
+                            ),
+                          ),
+                        },
                         child: Container(
                           margin: EdgeInsets.fromLTRB(5, 0, 25, 0),
                           width: 156,
