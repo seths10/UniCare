@@ -32,7 +32,7 @@ All the design/mockups for the app have been added in the `designs` directory. Y
    integrate with the flutter app, without any hassle to manage & create
    instances of our server. 
    
-  - For sign-ups & authentication, we used Firebase authentication.
+  - For sign-ups & authentication, we used Firebase authentication or Auth.
    
   - For storing the different types of data including user data, we chose Cloud Firestore because of its robust
    features and ability to query & filter out documents with ease.
