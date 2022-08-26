@@ -1,6 +1,6 @@
 <img src="./designs/UniCare design.png" width="100%" height="60%"/>
 <h1 align="center"> UniCare </h1>
-<p align="center">A <b>Solution Challenge</b> Submission</p>.
+<p align="center">A <b>Solution Challenge</b> Submission</p>
 
 <p align="center">UniCare was created to help students to gain easy access to therapists and counselors on campus. It contains a reporting functionality to make an SOS call to nearby police, hospitals or fire service in case of an emergency. We believe that this is a necessary step in bringing down the death-rate due to suicide and depression in our community.</p>
 
